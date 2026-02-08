@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <div class="app">
+    <header>
+      <h1>Study Assistant</h1>
+      <p>Built with Wolfram Alpha Developer Portal</p>
+    </header>
+
+    <main id="chat"></main>
+
+    <footer>
+      <input
+        id="question"
+        placeholder="Ask a math or science question…"
+        autocomplete="off"
+      />
+      <button onclick="ask()">Send</button>
+    </footer>
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
