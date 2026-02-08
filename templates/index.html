@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Study Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>📘 Study Assistant</h1>
-    <p class="subtitle">
-      Built with <span>Wolfram Alpha Developer Portal</span>
-    </p>
+  <div class="app">
+    <header>
+      <h1>Study Assistant</h1>
+      <p>Built with Wolfram Alpha Developer Portal</p>
+    </header>
 
-    <input id="question" placeholder="Ask a math or science question..." />
-    <button onclick="ask()">Ask</button>
+    <main id="chat"></main>
 
-    <div id="chat"></div>
+    <footer>
+      <input
+        id="question"
+        placeholder="Ask a math or science question…"
+        autocomplete="off"
+      />
+      <button onclick="ask()">Send</button>
+    </footer>
   </div>
 
   <script src="/static/js/script.js"></script>
