@@ -1,5 +1,19 @@
 async function ask() {
-  const q = document.getElementById("question").value;
+  const input = document.getElementById("question");
+  const chat = document.getElementById("chat");
+  const q = input.value.trim();
+
+  if (!q) return;
+
+  chat.innerHTML += `
+    <div class="message">
+      <div class="user">You</div>
+      <div class="ai">${q}</div>
+    </div>
+  `;
+
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
 
   const res = await fetch("/ask", {
     method: "POST",
@@ -9,6 +23,12 @@ async function ask() {
 
   const data = await res.json();
 
-  const chat = document.getElementById("chat");
-  chat.textContent += `\nYou: ${q}\nAI: ${data.answer}\n`;
+  chat.innerHTML += `
+    <div class="message">
+      <div class="user">Study Assistant</div>
+      <div class="ai">${data.answer}</div>
+    </div>
+  `;
+
+  chat.scrollTop = chat.scrollHeight;
 }
